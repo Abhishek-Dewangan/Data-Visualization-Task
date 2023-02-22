@@ -1,8 +1,5 @@
-.scatterPlotContainer{
-    width: 100%;
-    margin: 1em auto;
+.scatterPlotContainer {
+  width: 100%;
+  margin: auto;
 }
 
-.echart{
-    width: 100%;
-}

@@ -17,7 +17,7 @@ const ScatterPlot = () => {
     },
     yAxis: {
       name: 'Hue',
-      nameGap: 30,
+      nameGap: 20,
       nameLocation: 'middle',
       nameTextStyle: {
         horizontalAlign: 'top',
@@ -39,7 +39,10 @@ const ScatterPlot = () => {
   };
   return (
     <div className={styles.scatterPlotContainer}>
-      <ReactEcharts option={option} className={styles.echart} />
+      <ReactEcharts
+        option={option}
+        style={{height:400}}
+      />
     </div>
   );
 };

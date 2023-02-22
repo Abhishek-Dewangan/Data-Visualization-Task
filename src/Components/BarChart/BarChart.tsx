@@ -14,10 +14,11 @@ const BarChart = () => {
         fontSize: 16,
         fontWeight: 'bold',
       },
+      max: 3.5,
     },
     yAxis: {
       name: 'Malic Acid',
-      nameGap: 30,
+      nameGap: 20,
       nameLocation: 'middle',
       nameTextStyle: {
         horizontalAlign: 'top',
@@ -28,16 +29,15 @@ const BarChart = () => {
     series: {
       data: barChart,
       type: 'bar',
-      colorBy:'data',
-      barWidth:100
+      colorBy: 'data',
     },
-    grid:{
-        height:'60%'
-    }
+    grid: {
+      height: '60%',
+    },
   };
   return (
     <div className={styles.barChartContainer}>
-      <ReactEchart option={option} />
+      <ReactEchart option={option} style={{height: 400}} />
     </div>
   );
 };
