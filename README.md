@@ -1,5 +1,7 @@
 # Data Visualization Task
 
+![Deploy Link](https://exquisite-fox-8ad81a.netlify.app/)
+
 ### Scatter Plot
 
 ![Scaller Plot](./Website-Sneak-Peeks/scatter-plot.png)
