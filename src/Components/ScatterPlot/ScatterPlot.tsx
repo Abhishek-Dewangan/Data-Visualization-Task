@@ -8,7 +8,6 @@ const ScatterPlot = () => {
     xAxis: {
       name: 'Color Intencity',
       nameGap: 30,
-      fontSize: 40,
       nameLocation: 'middle',
       nameTextStyle: {
         verticalAlign: 'top',
@@ -21,7 +20,6 @@ const ScatterPlot = () => {
       nameGap: 30,
       nameLocation: 'middle',
       nameTextStyle: {
-        align: 'left',
         horizontalAlign: 'top',
         fontSize: 16,
         fontWeight: 'bold',
