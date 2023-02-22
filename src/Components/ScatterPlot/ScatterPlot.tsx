@@ -5,9 +5,10 @@ import ReactEcharts from 'echarts-for-react';
 const ScatterPlot = () => {
   console.log(scatterData);
   const option = {
-    xAxis: {},
-    yAxis: {},
-    series: [{symbolSize: 5, data: scatterData, type: 'scatter', color:'red'}],
+    title: {text: 'Scatter Plot of Wine Data', left: 'center'},
+    xAxis: {name: 'Color Intencity', nameLocation: 'end', nameTextStyle:{align:'left'}},
+    yAxis: {name: 'Hue', nameLocation: 'end'},
+    series: [{symbolSize: 5, data: scatterData, type: 'scatter', color: 'red'}],
   };
   return (
     <div className={styles.scatterPlotContainer}>
