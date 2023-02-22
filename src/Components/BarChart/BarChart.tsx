@@ -3,10 +3,9 @@ import ReactEchart from 'echarts-for-react';
 import {barChart} from '../../Assets/WineData';
 
 const BarChart = () => {
-    console.log(barChart)
   const option = {
-    xAxis: {type:''},
-    yAxis: {type:''},
+    xAxis: {},
+    yAxis: {},
     series: {
       data: barChart,
       type: 'bar',
@@ -14,7 +13,6 @@ const BarChart = () => {
   };
   return (
     <div>
-      <h1>BarChart</h1>
       <ReactEchart option={option} />
     </div>
   );

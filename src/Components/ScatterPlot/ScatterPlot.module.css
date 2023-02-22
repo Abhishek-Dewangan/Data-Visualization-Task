@@ -1,0 +1,9 @@
+.scatterPlotContainer{
+    height: 400px;
+    width: 90%;
+    margin: 1em auto;
+}
+
+.echart{
+    width: 100%;
+}

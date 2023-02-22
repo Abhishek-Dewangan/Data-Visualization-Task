@@ -3,17 +3,45 @@ import {scatterData} from '../../Assets/WineData';
 import ReactEcharts from 'echarts-for-react';
 
 const ScatterPlot = () => {
-  console.log(scatterData);
   const option = {
-    title: {text: 'Scatter Plot of Wine Data', left: 'center'},
-    xAxis: {name: 'Color Intencity', nameLocation: 'end', nameTextStyle:{align:'left'}},
-    yAxis: {name: 'Hue', nameLocation: 'end'},
-    series: [{symbolSize: 5, data: scatterData, type: 'scatter', color: 'red'}],
+    title: {text: 'Scatter Plot of Wine Data', left: 'center', textStyle: {}},
+    xAxis: {
+      name: 'Color Intencity',
+      nameGap: 30,
+      fontSize: 40,
+      nameLocation: 'middle',
+      nameTextStyle: {
+        verticalAlign: 'top',
+        fontSize: 16,
+        fontWeight: 'bold',
+      },
+    },
+    yAxis: {
+      name: 'Hue',
+      nameGap: 30,
+      nameLocation: 'middle',
+      nameTextStyle: {
+        align: 'left',
+        horizontalAlign: 'top',
+        fontSize: 16,
+        fontWeight: 'bold',
+      },
+    },
+    series: [
+      {
+        symbolSize: 6,
+        data: scatterData,
+        type: 'scatter',
+        colorBy: 'data',
+      },
+    ],
+    grid: {
+      height: '60%',
+    },
   };
   return (
     <div className={styles.scatterPlotContainer}>
-      <h1>ScatterPlot</h1>
-      <ReactEcharts option={option} />
+      <ReactEcharts option={option} className={styles.echart} />
     </div>
   );
 };
