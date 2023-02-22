@@ -39,10 +39,7 @@ const ScatterPlot = () => {
   };
   return (
     <div className={styles.scatterPlotContainer}>
-      <ReactEcharts
-        option={option}
-        style={{height:400}}
-      />
+      <ReactEcharts option={option} style={{height: 500}} />
     </div>
   );
 };

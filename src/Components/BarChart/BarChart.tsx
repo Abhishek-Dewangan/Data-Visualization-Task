@@ -37,7 +37,7 @@ const BarChart = () => {
   };
   return (
     <div className={styles.barChartContainer}>
-      <ReactEchart option={option} style={{height: 400}} />
+      <ReactEchart option={option} style={{height: 500}} />
     </div>
   );
 };
