@@ -1,9 +1,10 @@
 import './App.css';
+import ScatterPlot from './Components/ScatterPlot/ScatterPlot';
 
 function App() {
   return (
     <div className='App'>
-      <h1>Hello</h1>
+      <ScatterPlot />
     </div>
   );
 }
