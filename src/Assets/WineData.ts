@@ -1,4 +1,4 @@
-export const wineData = [
+const wineData = [
     {
       "Alcohol": 1,
       "Malic Acid": 14.23,
@@ -2670,3 +2670,13 @@ export const wineData = [
       "Unknown": 1.6
     }
   ]
+
+const scatterData = new Array(wineData.length);
+const barChart = new Array(wineData.length);
+
+wineData.forEach((elem,i)=>{
+    scatterData[i] = [elem["Color intensity"],elem['Hue']];
+    barChart[i] = [elem["Alcohol"],elem["Malic Acid"]];
+})
+
+export {scatterData, barChart, wineData};
