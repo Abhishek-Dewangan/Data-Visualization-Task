@@ -1,6 +1,6 @@
 # Data Visualization Task
 
-[Deploy Link](https://exquisite-fox-8ad81a.netlify.app/)
+[Deploy Link](https://datavisualizationchart.netlify.app/)
 
 ### Scatter Plot
 
