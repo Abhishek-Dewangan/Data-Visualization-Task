@@ -1,6 +1,6 @@
 import styles from './BarChart.module.css';
 import ReactEchart from 'echarts-for-react';
-import {barChart} from '../../Assets/WineData';
+import {barChart} from '../../Assets/BarGraph';
 
 const BarChart = () => {
   const option = {

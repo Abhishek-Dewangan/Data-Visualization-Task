@@ -2671,18 +2671,4 @@ const wineData = [
     }
   ]
 
-const scatterData = new Array(wineData.length);
-const barChart = new Array(wineData.length);
-const minimumHue = wineData.reduce((prev, curr) =>
-  prev['Hue'] < curr['Hue'] ? prev : curr
-);
-const maximumHue = wineData.reduce((prev, curr) =>
-  prev['Hue'] > curr['Hue'] ? prev : curr
-);
-
-wineData.forEach((elem, i) => {
-  scatterData[i] = [elem['Color intensity'], elem['Hue']];
-  barChart[i] = [elem['Alcohol'], elem['Malic Acid']];
-});
-
-export {scatterData, barChart, wineData, minimumHue, maximumHue};
+export {wineData};
