@@ -1,9 +1,8 @@
 import styles from './ScatterPlot.module.css';
-import {scatterData, minimumHue, maximumHue} from '../../Assets/WineData';
+import {scatterData, minimumHue, maximumHue} from '../../Assets/ScatterData';
 import ReactEcharts from 'echarts-for-react';
 
 const ScatterPlot = () => {
-  console.log(minimumHue);
   const option = {
     title: {text: 'Scatter Plot of Wine Data', left: 'center', textStyle: {}},
     visualMap: {
@@ -20,8 +19,8 @@ const ScatterPlot = () => {
     },
     tooltip: {
       axisPointer: {
-        type: 'cross'
-      }
+        type: 'cross',
+      },
     },
     xAxis: {
       name: 'Color Intencity',
