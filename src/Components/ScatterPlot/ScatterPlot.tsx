@@ -1,8 +1,20 @@
+import {useState, useEffect} from 'react';
 import styles from './ScatterPlot.module.css';
 import {scatterData, minimumHue, maximumHue} from '../../Assets/ScatterData';
 import ReactEcharts from 'echarts-for-react';
 
 const ScatterPlot = () => {
+  const [windowSize, setWindowsize] = useState(window.innerWidth);
+  const [calculateStatus, setCalculateStatus] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setWindowsize(window.innerWidth));
+  });
+
+  useEffect(() => {
+    if (windowSize < 820) setCalculateStatus(false);
+    else setCalculateStatus(true);
+  }, [windowSize]);
   const option = {
     title: {text: 'Scatter Plot of Wine Data', left: 'center', textStyle: {}},
     visualMap: {
@@ -12,7 +24,7 @@ const ScatterPlot = () => {
       right: -1,
       top: 100,
       text: ['HIGH', 'LOW'],
-      calculable: true,
+      calculable: calculateStatus,
       inRange: {
         color: ['#f2c31a', '#24b7f2'],
       },
