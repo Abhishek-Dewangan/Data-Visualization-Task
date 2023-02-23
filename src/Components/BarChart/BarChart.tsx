@@ -1,11 +1,44 @@
+import {useRef, useEffect, useState} from 'react';
 import styles from './BarChart.module.css';
 import ReactEchart from 'echarts-for-react';
-import {barChart} from '../../Assets/BarGraph';
+import {
+  barChart,
+  minimumMalicAcid,
+  maximumMalicAcid,
+} from '../../Assets/BarGraph';
 
 const BarChart = () => {
+  const [windowSize, setWindowsize] = useState(window.innerWidth);
+  const [calculateStatus, setCalculateStatus] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setWindowsize(window.innerWidth));
+  });
+
+  useEffect(() => {
+    if (windowSize < 820) setCalculateStatus(false);
+    else setCalculateStatus(true);
+  }, [windowSize]);
+  
   const option = {
     title: {text: 'Bar Graph of Wine Data', left: 'center'},
-    // visualMap: {min: Math.min(...barChart)},
+    visualMap: {
+      min: minimumMalicAcid['Malic Acid'],
+      max: maximumMalicAcid['Malic Acid'],
+      orient: 'vertical',
+      right: -1,
+      top: 100,
+      text: ['HIGH', 'LOW'],
+      calculable: calculateStatus,
+      inRange: {
+        color: ['#f2c31a', '#24b7f2'],
+      },
+    },
+    tooltip: {
+      axisPointer: {
+        type: 'cross',
+      },
+    },
     xAxis: {
       name: 'Alcohol',
       nameGap: 30,
