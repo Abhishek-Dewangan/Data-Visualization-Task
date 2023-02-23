@@ -5,6 +5,7 @@ import {barChart} from '../../Assets/WineData';
 const BarChart = () => {
   const option = {
     title: {text: 'Bar Graph of Wine Data', left: 'center'},
+    // visualMap: {min: Math.min(...barChart)},
     xAxis: {
       name: 'Alcohol',
       nameGap: 30,
@@ -30,6 +31,7 @@ const BarChart = () => {
       data: barChart,
       type: 'bar',
       colorBy: 'data',
+      boxplot: {hoverAnimation: true},
     },
     grid: {
       height: '60%',
