@@ -15,14 +15,19 @@ const ScatterPlot = () => {
     if (windowSize < 820) setCalculateStatus(false);
     else setCalculateStatus(true);
   }, [windowSize]);
+
   const option = {
-    title: {text: 'Scatter Plot of Wine Data', left: 'center', textStyle: {}},
+    title: {
+      text: 'Scatter Plot of Wine Data',
+      subtext: 'Color Intensity / Hue',
+      left: 'center',
+    },
     visualMap: {
       min: minimumHue['Hue'],
       max: maximumHue['Hue'],
       orient: 'vertical',
       right: -1,
-      top: 100,
+      top: 'middle',
       text: ['HIGH', 'LOW'],
       calculable: calculateStatus,
       inRange: {
@@ -66,9 +71,13 @@ const ScatterPlot = () => {
       height: '60%',
     },
   };
+
   return (
     <div className={styles.scatterPlotContainer}>
-      <ReactEcharts option={option} style={{height: 500}} />
+      <ReactEcharts
+        option={option}
+        style={{height: windowSize < 820 ? 300 : 500}}
+      />
     </div>
   );
 };

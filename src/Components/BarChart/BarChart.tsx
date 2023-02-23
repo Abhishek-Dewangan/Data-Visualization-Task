@@ -19,15 +19,19 @@ const BarChart = () => {
     if (windowSize < 820) setCalculateStatus(false);
     else setCalculateStatus(true);
   }, [windowSize]);
-  
+
   const option = {
-    title: {text: 'Bar Graph of Wine Data', left: 'center'},
+    title: {
+      text: 'Bar Graph of Wine Data',
+      subtext: 'Alcohol / Malic Acid',
+      left: 'center',
+    },
     visualMap: {
       min: minimumMalicAcid['Malic Acid'],
       max: maximumMalicAcid['Malic Acid'],
       orient: 'vertical',
       right: -1,
-      top: 100,
+      top: 'middle',
       text: ['HIGH', 'LOW'],
       calculable: calculateStatus,
       inRange: {
@@ -70,9 +74,13 @@ const BarChart = () => {
       height: '60%',
     },
   };
+
   return (
     <div className={styles.barChartContainer}>
-      <ReactEchart option={option} style={{height: 500}} />
+      <ReactEchart
+        option={option}
+        style={{height: windowSize < 820 ? 300 : 500}}
+      />
     </div>
   );
 };
